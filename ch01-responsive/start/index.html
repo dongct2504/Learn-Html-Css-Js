@@ -66,7 +66,7 @@
         </li>
         <li>
           Make a well in the dry mix, then add the liquid and combine
-          it quickly with a cutlery knife – it will seem pretty wet at
+          it quickly with a cutlery knife - it will seem pretty wet at
           first. Spread some flour onto the work surface and tip the
           dough out. Dredge the dough and your hands with a little
           more flour, then fold the dough over 2-3 times until it's
@@ -95,6 +95,40 @@
         </li>
       </ol>
     </section>
+
+    <div>
+      <video controls preload="auto" loop>
+        <source src="videos/UNDERTALE - Once Upon a Time [Soft Piano Arrangement].mp4" type="video/mp4">
+        If you reading this, some problems happen
+      </video>
+    </div>
+    <div class="embed-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/mdBYIe9_fMo" title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+
+    <div>
+      <button id="launchDialog">Click to launch a dialog</button>
+      <p id="formResult"></p>
+      <dialog id="dialogEle">
+        <form method="dialog">
+          <h1>How about this? A native Dialog.</h1>
+          <p>So, only thing left to do is dismiss me.</p>
+          <button value="Dismissed!">Dismiss Dialog</button>
+        </form>
+      </dialog>
+      <script>
+        const dialogEle = document.getElementById("dialogEle");
+        const launchBtn = document.getElementById("launchDialog");
+        const formResult = document.getElementById("formResult");
+        launchBtn.addEventListener("click", () => dialogEle.showModal());
+        dialogEle.addEventListener("close", () => {
+          formResult.textContent = dialogEle.returnValue;
+        });
+      </script>
+    </div>
 
     <footer>
       <p>

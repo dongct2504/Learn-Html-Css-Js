@@ -1,0 +1,95 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.Wrap {
+    max-width: 1420px;
+    margin: 0 auto;
+}
+
+.Header {
+    height: 130px;
+    width: 100%;
+    text-align: center;
+    background-color: #038c5a;
+}
+
+.WrapMiddle {
+    width: 100%;
+    font-size: 0;
+}
+
+/*
+    The layout is 960 px wide. Both the header and footer are the full widths of the 
+layout. The lefthand area is 200 px wide, and the right-hand area is 100 px wide. That 
+leaves 660 px for the main content area. 
+    Our job is to convert this fixed-width design into a fluid layout that retains its 
+proportions as it is resized. For our first task, we need to convert the middle and side 
+sections into proportional dimensions.
+*/
+/* 
+    This is the formula:
+        target / content = result 
+*/
+.Left {
+    height: 625px;
+    /* 200 / 960 = 0.20833333 ==> 20.83 */
+    width: 20.83%;
+    background-color: #03a66a;
+    display: inline-block;
+    position: absolute;
+    left: -200px;
+    width: 200px;
+    font-size: 0.9rem;
+    transition: transform 0.3s;
+}
+
+/* if (width >= 40rem) accept */
+@media (min-width: 40rem) {
+    .Left {
+        width: 20.83%;
+        left: 0;
+        position: relative;
+    }
+}
+
+.Middle {
+    height: 625px;
+    /* 660 / 960 = 0.6875 */
+    background-color: #bbbf90;
+    transition: transform .3s;
+    font-size: .9rem;
+    /* display: inline-block; */
+}
+
+@media (min-width: 40rem) {
+    .Middle {
+        display: inline-block;
+        width: 68.75%;
+    }
+}
+
+.Right {
+    height: 625px;
+    /* 100 / 960 = 0.1041666 */
+    width: 100%;
+    background-color: #03a66a;
+    font-size: .9rem;
+    /* display: inline-block; */
+}
+
+@media (min-width: 40rem) {
+    .Right {
+        width: 10.41%;
+        display: inline-block;
+    }
+}
+
+.Footer {
+    height: 200px;
+    width: 100%;
+    text-align: center;
+    background-color: #025059;
+}
